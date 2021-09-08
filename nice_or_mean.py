@@ -5,6 +5,9 @@
 # This is the first project within the tech academies python course
 # The projects purpose is to create a functional text base game
 
+from PIL import Image
+
+
 def start(nice=0,mean=0,name=""):
     # get user's name
     name = describe_game(name)
@@ -40,10 +43,15 @@ def nice_mean(nice,mean,name):
         show_score(nice,mean,name)
         pick = input("\nA stranger approaches you for a \nconversation. Will you be nice \nor mean? (N/M) \n>>>: ").lower()
         if pick == "n":
+            face = Image.open('face.jpg')
+            face.show()
+            
             print("\nThe stranger walks away smiling...")
             nice = (nice + 1)
             stop = False
         if pick == "m":
+            face = Image.open('face1.jpg')
+            face.show()
             print("\nThe stranger glares at you \nmenacingly and storms off...")
             mean = (mean + 1)
             stop = False
