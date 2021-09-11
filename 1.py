@@ -15,11 +15,15 @@ class Organism:
 
 # child class of instance
 class Human(Organism):
-    name = "Jacob"
+    name = "Jacob Drawhorn"
+    fname = "Jacob"
+    lname = "Drawhorn"
     species = "Homosapian"
     legs = 2
     arms = 2
     origin = "Earth"
+    age = "19"
+    avg_lifespan = "70 years"
 
     def ingenuity(self):
         msg = "\nDestroy the Earth!"
@@ -33,6 +37,8 @@ class Dog(Organism):
     arms = 0
     dna = "Sequence B"
     origin = "Earth"
+    age = "8"
+    avg_lifespan = "10 years"
 
     def bite(self):
         msg = "\nDog bites intruder!"
