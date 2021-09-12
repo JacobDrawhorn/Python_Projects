@@ -18,10 +18,9 @@ def data_entry():
 data_entry()  # ==> call the function
 
 #query .txt
-x = c.execute("SELECT * FROM server WHERE sites = 'Hello.txt' AND 'World.txt'")
+x = c.execute("SELECT * FROM server WHERE sites LIKE '%txt'")
 rows = x
 for row in rows:
     print(row)
 
 conn.close()
-

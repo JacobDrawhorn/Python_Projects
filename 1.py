@@ -39,6 +39,7 @@ class Dog(Organism):
     origin = "Earth"
     age = "8"
     avg_lifespan = "10 years"
+    max_speed = "15 mph"
 
     def bite(self):
         msg = "\nDog bites intruder!"
