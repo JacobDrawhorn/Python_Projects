@@ -13,9 +13,9 @@ class MyCar(Vehicle):
 
 # creates variables to put in classes and prints the functions
 
-v1 = Vehicle('car')
-v2 = MyCar('train')
-print(v1.__dict__)
-print(v2.__dict__)
+_v1 = Vehicle('car')
+_v2 = MyCar('train')
+print(_v1.__dict__)
+print(_v2.__dict__)
 
 
