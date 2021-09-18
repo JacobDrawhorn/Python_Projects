@@ -26,18 +26,30 @@ root.geometry('450x450+500+300')
 source = StringVar()
 destination = StringVar()
 
-def files():
-    root.filename = filedialog.askdirectory()
+def folder1():
+    folder = root.filename = filedialog.askdirectory()
+    if folder is not None:
+        e1.insert(END, folder)
 
-b1 = Button(root, text="FOLDER OPEN", command = files)
+def folder2():
+    folder = root.filename = filedialog.askdirectory()
+    if folder is not None:
+        e2.insert(END, folder)
+
+b1 = Button(root, text="SELECT SOURCE FOLDER", command = folder1)
 b1.pack()
-b2 = Button(root, text="FILE TRANSFER", command = file_transfer)
+b2 = b1 = Button(root, text="SELECT DESTINATION FOLDER", command = folder2)
 b2.pack()
-l1 = Label(root,text='Put source directory below').pack()
+b3 = Button(root, text="INITIATE FILE TRANSFER", command = file_transfer)
+b3.pack()
+l1 = Label(root,text='Source path below').pack()
 e1 = Entry(root, textvariable=source)
 e1.pack()
-l2 = Label(root,text='Put destination directory below').pack()
+l2 = Label(root,text='Destination path below').pack()
 e2 = Entry(root, textvariable=destination)
 e2.pack()
+
+root.mainloop()
+
 
 
