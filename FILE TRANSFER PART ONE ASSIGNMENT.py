@@ -11,14 +11,7 @@ def file_transfer():
     files = os.listdir(source)
 
     for i in files:
-        shutil.move(source+i, destination)
-
-    schedule.every().day.at("01:00").do(file_transfer)
-
-    while True:
-        schedule.run_pending()
-        time.sleep(60) # wait one minute
-
+        shutil.move(source+ '/' + i, destination)
 
 root = Tk()
 root.title('File Transfer')
