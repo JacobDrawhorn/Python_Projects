@@ -10,8 +10,11 @@ def file_transfer():
     destination = e2.get()
     files = os.listdir(source)
 
-    for i in files:
-        shutil.move(source+ '/' + i, destination)
+    moddedt = time.ctime(os.path.getmtime(source))
+
+    if moddedt == 0:
+        for i in files:
+            shutil.move(source+ '/' + i, destination)
 
 root = Tk()
 root.title('File Transfer')
