@@ -2,6 +2,7 @@ import shutil
 import os
 import schedule
 import time
+from datetime import datetime, timedelta
 from tkinter import *
 from tkinter import filedialog
 
@@ -9,11 +10,8 @@ def file_transfer():
     source = e1.get()
     destination = e2.get()
     files = os.listdir(source)
-
-    moddedt = time.ctime(os.path.getmtime(source))
-
-    if moddedt == 0:
-        for i in files:
+    for i in files:
+        if os.path.getmtime(i) <= timedelta(1).total_seconds():
             shutil.move(source+ '/' + i, destination)
 
 root = Tk()
@@ -46,6 +44,7 @@ e2 = Entry(root, textvariable=destination)
 e2.pack()
 
 root.mainloop()
+
 
 
 
