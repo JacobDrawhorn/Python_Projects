@@ -11,7 +11,10 @@ def file_transfer():
     destination = e2.get()
     files = os.listdir(source)
     for i in files:
-        if os.path.getmtime(i) <= timedelta(1).total_seconds():
+        twentyfour = datetime.now() - timedelta(hours=24)
+        mtime = os.path.getmtime(source+ '/' + i)
+        modtime = datetime.fromtimestamp(mtime)
+        if modtime >= twentyfour:
             shutil.move(source+ '/' + i, destination)
 
 root = Tk()
